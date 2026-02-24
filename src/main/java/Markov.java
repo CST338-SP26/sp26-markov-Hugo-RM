@@ -149,10 +149,8 @@ public class Markov {
 	 * @return true if the last character is punctuation, false otherwise
 	 */
 	public static boolean endsWithPunctuation(String sentence) {
-		try {
-			return PUNCTUATION_MARKS.contains(sentence.substring(sentence.length() - 1));
-		} catch (StringIndexOutOfBoundsException e) {
-			return false;
-		}
+		if (sentence.isEmpty()) return false;
+		char endOfSentence = sentence.charAt(sentence.length() - 1);
+		return PUNCTUATION_MARKS.indexOf(endOfSentence) != -1;
 	}
 }
