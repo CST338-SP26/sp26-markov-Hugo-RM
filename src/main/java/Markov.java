@@ -151,6 +151,7 @@ public class Markov {
 	public static boolean endsWithPunctuation(String sentence) {
 		if (sentence.isEmpty()) return false;
 		char endOfSentence = sentence.charAt(sentence.length() - 1);
-		return PUNCTUATION_MARKS.indexOf(endOfSentence) != -1;
+		boolean hasPuncEnding = PUNCTUATION_MARKS.indexOf(endOfSentence) != -1;
+		return hasPuncEnding;
 	}
 }
